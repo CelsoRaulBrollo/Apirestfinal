@@ -9,7 +9,7 @@ import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Positive;
 
 public class ProductoDto {
-
+ 
 	@NotBlank
 	@Length(min = 5, max = 50)
 	private String nombre;
