@@ -37,8 +37,8 @@ public class UsuarioService {
         usuarioRepo.delete(usuario);
     }
 
-    public List<Usuario> usuarioPorCiudad(){
-        return usuarioRepo.encontrarUsuarioPorCiudad();
+    public List<Usuario> usuarioPorCiudad(String ciudad){
+        return usuarioRepo.findByCiudad(ciudad);
     }
 
     public List<Usuario> buscarUsuarioPorFechaCreacion(LocalDate fechaCreacion){

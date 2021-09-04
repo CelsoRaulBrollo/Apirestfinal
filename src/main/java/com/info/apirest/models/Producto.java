@@ -12,7 +12,7 @@ import javax.validation.constraints.Positive;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-@Entity 
+@Entity
 public class Producto {
 
     @Id

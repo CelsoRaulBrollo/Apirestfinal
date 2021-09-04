@@ -38,8 +38,8 @@ public class UsuarioController {
     }
 
     @GetMapping("api/v1/usuario/buscar/ciudad")
-    public ResponseEntity<?> buscarUsuarioCiudad(){
-        return new ResponseEntity<>(usuarioService.usuarioPorCiudad(),HttpStatus.OK);
+    public ResponseEntity<?> buscarUsuarioCiudad(String ciudad){
+        return new ResponseEntity<>(usuarioService.usuarioPorCiudad(ciudad),HttpStatus.OK);
     }
 
     @GetMapping("api/v1/usuario/buscar")

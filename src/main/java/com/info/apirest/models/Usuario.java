@@ -1,12 +1,18 @@
 package com.info.apirest.models;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.info.apirest.utils.ValidationHelper;
+
 import org.hibernate.annotations.CreationTimestamp;
 
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Usuario {
@@ -15,6 +21,14 @@ public class Usuario {
     @GeneratedValue(strategy= GenerationType.IDENTITY)
     private Long id;
 
+    @JsonIgnore
+   @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Carrito.class)
+   private List<Carrito> carrito = new ArrayList<>();
+   @JsonIgnore
+   @OneToMany(mappedBy = "usuario", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = Orden.class)
+   private List<Orden> ordens = new ArrayList<>();
+
+
     @NotBlank(message = "Ingrese un nombre")
     private String nombre;
 
@@ -22,7 +36,8 @@ public class Usuario {
     private String apellido;
 
     @NotBlank(message = "Ingrese un email")
-    @Column(unique = true, nullable = false)
+    @Column(unique = true)
+    @Email(regexp = ValidationHelper.EMAIL_REGEX)
     private String email;
 
     @NotBlank(message = "Ingrese una contraseña")
@@ -116,4 +131,31 @@ public class Usuario {
     public void setPais(String pais) {
         this.pais = pais;
     }
+
+    
+   public List<Carrito> getCarrito() { 
+       return carrito; 
+    }
+
+    public void setCarts(List<Carrito> carrito) { 
+        this.carrito = carrito; 
+    }
+    
+    public void addCarrito(Carrito carrito) { 
+        this.carrito.add(carrito); 
+    }
+
+
+    public List<Orden> getOrders() { 
+        return ordens; 
+    }
+
+    public void setOrders(List<Orden> ordens) { 
+        this.ordens = ordens; 
+    }
+
+    public void addOrder(Orden orden) { 
+        this.ordens.add(orden); 
+    }
 }
+

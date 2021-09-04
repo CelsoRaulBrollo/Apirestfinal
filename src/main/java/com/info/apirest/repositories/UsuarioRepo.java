@@ -14,7 +14,7 @@ import com.info.apirest.models.Usuario;
 public interface UsuarioRepo extends JpaRepository<Usuario, Long> {
 
     @Query("FROM Usuario WHERE ciudad LIKE 'Resistencia'")
-    List <Usuario> encontrarUsuarioPorCiudad();
+    List <Usuario> findByCiudad(String ciudad);
 
     @Query("FROM Usuario WHERE fechaCreacion >= ?1")
     List <Usuario> findByFechaDeCreacionAfter(LocalDate fechaCreacion);

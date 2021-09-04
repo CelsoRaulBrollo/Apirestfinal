@@ -28,7 +28,7 @@ public class ProductoService {
         }catch(Exception e){
             throw new Exception(e.getMessage());
         }
-    } 
+    }
 
     
     public List <Producto> buscarPorPublicado(Boolean publicado) throws Exception{
