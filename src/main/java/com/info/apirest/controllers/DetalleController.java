@@ -32,7 +32,7 @@ public class DetalleController {
          throw new ResourceNotFound("¡El detalle solicitado no existe!");
       }
       return ResponseEntity.status(HttpStatus.OK).body(detalle);
-   }
+   } 
 
    @GetMapping(value = "/detalle")
    public ResponseEntity<?> getAllDetails() {

@@ -37,7 +37,7 @@ public class Carrito {
    private List<Detalle> detalle = new ArrayList<>();
 
    public Carrito() {}
-
+ 
 
    // Getters
 

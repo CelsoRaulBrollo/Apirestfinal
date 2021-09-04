@@ -18,7 +18,7 @@ public class ProductoService {
     }
 
     public ArrayList<Producto> obtenerTodosLosProductos() {
-        return (ArrayList<Producto>) productoRepository.findAll();
+        return (ArrayList<Producto>) productoRepository.findAll(); 
     }
 
     public List <Producto> buscarPorNombre(String nombre) throws Exception{

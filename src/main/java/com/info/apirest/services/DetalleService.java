@@ -23,7 +23,7 @@ public class DetalleService {
    *  @param PurchaseDetailDTO requestDetail
    *     - Product product
    *     - Integer amount
-   *     - BigDecimal unitPrice
+   *     - BigDecimal unitPrice 
    * */
    public void updatePreparation(Detalle detalle, DetalleDto requestDetail) {
       detalle.setProducto(requestDetail.getProducto());

@@ -11,7 +11,7 @@ import javax.validation.constraints.Positive;
 public class ProductoDto {
 
 	@NotBlank
-	@Length(min = 5, max = 50)
+	@Length(min = 5, max = 50) 
 	private String nombre;
 
 	@NotBlank

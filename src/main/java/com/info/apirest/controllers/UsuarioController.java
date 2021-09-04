@@ -36,7 +36,7 @@ public class UsuarioController {
         usuarioService.eliminarUnUsuario(user);
         return HttpStatus.ACCEPTED;
     }
-
+ 
     @GetMapping("api/v1/usuario/buscar/ciudad")
     public ResponseEntity<?> buscarUsuarioCiudad(String ciudad){
         return new ResponseEntity<>(usuarioService.usuarioPorCiudad(ciudad),HttpStatus.OK);

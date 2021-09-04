@@ -23,7 +23,7 @@ public class OrdenService {
       orden.setId(ordenDto.getCarrito().getId());
       orden.setObservacion(ordenDto.getObservacion());
       orden.setDetalle(ordenDto.getCarrito().getDetalle());
-      orden.setUsuario(usuario);
+      orden.setUsuario(usuario); 
 
       updateUserCartsAndUserOrders(usuario, orden, ordenDto.getCarrito());
 

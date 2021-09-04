@@ -63,7 +63,7 @@ public class OrdenController {
       }
       return ResponseEntity.status(HttpStatus.OK).body(order);
    }
-
+ 
    @DeleteMapping(value = "/usuario/{id}/ordenes/{orderId}")
    public ResponseEntity<?> deleteOrder(@PathVariable("id") Long id, @PathVariable("orderId") Long orderId) {
       Optional<Usuario> usuario = usuarioRepo.findById(id);

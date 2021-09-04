@@ -9,7 +9,7 @@ import java.math.BigDecimal;
 
 public class DetalleDto {
 
-   @NotNull
+   @NotNull 
    @NotEmpty
    private Producto producto;
    @Positive

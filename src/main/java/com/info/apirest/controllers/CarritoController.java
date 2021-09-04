@@ -23,7 +23,7 @@ public class CarritoController {
 
    @Autowired
    private CarritoRepo carritoRepo;
-   @Autowired
+   @Autowired 
    private UsuarioRepo usuarioRepo;
 
    @Autowired

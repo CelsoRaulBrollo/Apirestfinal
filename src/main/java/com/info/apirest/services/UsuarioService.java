@@ -34,7 +34,7 @@ public class UsuarioService {
     }
 
     public void eliminarUnUsuario(Usuario usuario){
-        usuarioRepo.delete(usuario);
+        usuarioRepo.delete(usuario); 
     }
 
     public List<Usuario> usuarioPorCiudad(String ciudad){
